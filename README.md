@@ -1,34 +1,42 @@
 
-### How to drink?
+
+### Hydration party 
 * Start the server
-    ./ಉಗ್ರಾಣ.py
-* Open the JMeter Test Plan in JMeter. File -> Open -> ಮದ್ಯದ-ಅಂಗಡಿ.jmx
-* Start the Test Plan in JMeter. Run -> Start
-* You should see the "ಎಣ್ಣೆ ಸಾಂಗ್" song printed out on your console.
+    ```bash
+    python3 service.py
+    ```
+    
+* Open a new terminal session and to run a JMeter script from the command line
+    ```bash
+    jmeter -n -t thirsty.jmx
+    ```
+
+* Switch back to the tab where you are running the server. You should see the "thirsty song" printed out on your console.
 <pre>
-    ಕಪಾಟಿನಲ್ಲಿ 99 ವೋಡ್ಕಾ  ಬಾಟಲಿಗಳು. Date=1709622602707 Thread=0
-    127.0.0.1 - - [05/Mar/2024 12:40:02] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 99 ಬ್ರಾಂಡಿ  ಬಾಟಲಿಗಳು. Date=1709622602812 Thread=1
-    127.0.0.1 - - [05/Mar/2024 12:40:02] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 99 ರಮ್  ಬಾಟಲಿಗಳು. Date=1709622602909 Thread=2
-    127.0.0.1 - - [05/Mar/2024 12:40:02] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 99 ರಮ್  ಬಾಟಲಿಗಳು. Date=1709622603012 Thread=3
-    127.0.0.1 - - [05/Mar/2024 12:40:03] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 98 ವಿಸ್ಕಿ  ಬಾಟಲಿಗಳು. Date=1709622603021 Thread=3
-    127.0.0.1 - - [05/Mar/2024 12:40:03] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 97 ರಮ್  ಬಾಟಲಿಗಳು. Date=1709622603034 Thread=3
-    127.0.0.1 - - [05/Mar/2024 12:40:03] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 99 ಬ್ರಾಂಡಿ  ಬಾಟಲಿಗಳು. Date=1709622603112 Thread=4
-    127.0.0.1 - - [05/Mar/2024 12:40:03] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 99 ರಮ್  ಬಾಟಲಿಗಳು. Date=1709622603211 Thread=5
-    127.0.0.1 - - [05/Mar/2024 12:40:03] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 99 ವಿಸ್ಕಿ  ಬಾಟಲಿಗಳು. Date=1709622603311 Thread=6
-    127.0.0.1 - - [05/Mar/2024 12:40:03] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 99 ವಿಸ್ಕಿ  ಬಾಟಲಿಗಳು. Date=1709622603411 Thread=7
-    127.0.0.1 - - [05/Mar/2024 12:40:03] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 98 ಬ್ರಾಂಡಿ  ಬಾಟಲಿಗಳು. Date=1709622603415 Thread=7
-    127.0.0.1 - - [05/Mar/2024 12:40:03] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 99 ವಿಸ್ಕಿ  ಬಾಟಲಿಗಳು. Date=1709622603512 Thread=8
-    127.0.0.1 - - [05/Mar/2024 12:40:03] "POST /flask HTTP/1.1" 200 -
-    ಕಪಾಟಿನಲ್ಲಿ 99 ವಿಸ್ಕಿ  ಬಾಟಲಿಗಳು. Date=1709622603612 Thread=9
+    There are 2 bottles of Brandy in the cabinet. Date=1713344734810 Thread=6
+    127.0.0.1 - - [17/Apr/2024 14:35:34] "POST /flask HTTP/1.1" 200 -
+     There are 1 bottle of Brandy in the cabinet. Date=1713344734821 Thread=6
+    127.0.0.1 - - [17/Apr/2024 14:35:34] "POST /flask HTTP/1.1" 200 -
+     There are 0 bottles of Vodka in the cabinet. Date=1713344734830 Thread=6
+    127.0.0.1 - - [17/Apr/2024 14:35:34] "POST /flask HTTP/1.1" 200 -
+     There are 7 bottles of Whiskey in the cabinet. Date=1713344734847 Thread=7
+    127.0.0.1 - - [17/Apr/2024 14:35:34] "POST /flask HTTP/1.1" 200 -
+     There are 1 bottle of Rum in the cabinet. Date=1713344735702 Thread=4
+    127.0.0.1 - - [17/Apr/2024 14:35:35] "POST /flask HTTP/1.1" 200 -
+     There are 6 bottles of Vodka in the cabinet. Date=1713344735854 Thread=7
+    127.0.0.1 - - [17/Apr/2024 14:35:35] "POST /flask HTTP/1.1" 200 -
+     There are 0 bottles of Rum in the cabinet. Date=1713344736716 Thread=4
+    127.0.0.1 - - [17/Apr/2024 14:35:36] "POST /flask HTTP/1.1" 200 -
+     There are 5 bottles of Vodka in the cabinet. Date=1713344736859 Thread=7
+    127.0.0.1 - - [17/Apr/2024 14:35:36] "POST /flask HTTP/1.1" 200 -
+     There are 4 bottles of Brandy in the cabinet. Date=1713344736864 Thread=7
+    127.0.0.1 - - [17/Apr/2024 14:35:36] "POST /flask HTTP/1.1" 200 -
+     There are 3 bottles of Rum in the cabinet. Date=1713344736867 Thread=7
+    127.0.0.1 - - [17/Apr/2024 14:35:36] "POST /flask HTTP/1.1" 200 -
+     There are 2 bottles of Rum in the cabinet. Date=1713344736871 Thread=7
+    127.0.0.1 - - [17/Apr/2024 14:35:36] "POST /flask HTTP/1.1" 200 -
+     There are 1 bottle of Brandy in the cabinet. Date=1713344736877 Thread=7
+    127.0.0.1 - - [17/Apr/2024 14:35:36] "POST /flask HTTP/1.1" 200 -
+     There are 0 bottles of Whiskey in the cabinet. Date=1713344736881 Thread=7
+    127.0.0.1 - - [17/Apr/2024 14:35:36] "POST /flask HTTP/1.1" 200 -
 </pre>
