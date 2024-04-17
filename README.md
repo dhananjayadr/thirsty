@@ -9,6 +9,7 @@ This is a simple POC to demonstrate the generation of requests in JMeter.
     
 * And of course, check if JMeter is installed.
 
+### Getting Started
 * Start the server by running:
     ```bash
     python3 service.py
