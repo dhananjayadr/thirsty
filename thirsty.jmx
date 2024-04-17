@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="ಮದ್ಯದ ಅಂಗಡಿ">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="thirsty">
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
     </TestPlan>
     <hashTree>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="ಎಣ್ಣೆ">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="variables">
         <collectionProp name="Arguments.arguments">
           <elementProp name="host" elementType="Argument">
             <stringProp name="Argument.name">host</stringProp>
@@ -31,28 +31,28 @@
           </elementProp>
           <elementProp name="drink0" elementType="Argument">
             <stringProp name="Argument.name">drink0</stringProp>
-            <stringProp name="Argument.value">ವಿಸ್ಕಿ</stringProp>
+            <stringProp name="Argument.value">Whiskey</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="drink1" elementType="Argument">
             <stringProp name="Argument.name">drink1</stringProp>
-            <stringProp name="Argument.value">ಬ್ರಾಂಡಿ</stringProp>
+            <stringProp name="Argument.value">Brandy</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="drink2" elementType="Argument">
             <stringProp name="Argument.name">drink2</stringProp>
-            <stringProp name="Argument.value">ರಮ್</stringProp>
+            <stringProp name="Argument.value">Rum</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="drink3" elementType="Argument">
             <stringProp name="Argument.name">drink3</stringProp>
-            <stringProp name="Argument.value">ವೋಡ್ಕಾ</stringProp>
+            <stringProp name="Argument.value">Vodka</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="ಕುಡುಕರು">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="threads">
         <stringProp name="ThreadGroup.num_threads">${threads}</stringProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -63,12 +63,12 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="ಹಾಡು">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="loop">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ಮಾಣಿ">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="request">
             <intProp name="HTTPSampler.concurrentPool">4</intProp>
             <stringProp name="HTTPSampler.path">http://${host}:${port}/flask</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -86,7 +86,7 @@
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="ಬಟ್ಟಿ">
+            <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="set">
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="script">// Calculate number
@@ -110,7 +110,7 @@ vars.put(&quot;thread&quot;,thread);</stringProp>
               <stringProp name="scriptLanguage">javascript</stringProp>
             </BSFPreProcessor>
             <hashTree/>
-            <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="ಸಂಖ್ಯೆ">
+            <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="count">
               <stringProp name="CounterConfig.start">0</stringProp>
               <stringProp name="CounterConfig.end">99</stringProp>
               <stringProp name="CounterConfig.incr">1</stringProp>
@@ -119,7 +119,7 @@ vars.put(&quot;thread&quot;,thread);</stringProp>
               <boolProp name="CounterConfig.per_user">true</boolProp>
             </CounterConfig>
             <hashTree/>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="ಪಾಳಿ">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="header">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="" elementType="Header">
                   <stringProp name="Header.name">Content-Type</stringProp>
@@ -131,7 +131,7 @@ vars.put(&quot;thread&quot;,thread);</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="ವರದಿಯ ಸಾರಾಂಶ">
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="summary">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -163,7 +163,7 @@ vars.put(&quot;thread&quot;,thread);</stringProp>
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="ಫಲಿತಾಂಶಗಳ ಸಾರಾಂಶ ವೀಕ್ಷಿಸಿ">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="view">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
