@@ -1,12 +1,20 @@
-
-
 ### Hydration party 
-* Start the server
+This is a simple POC to demonstrate the generation of complex requests in JMeter.
+
+### Prerequisites 
+* The server script is written in Python using the Flask micro web framework. You need to have Python installed and Flask installed by running:
+    ```bash
+    pip3 install flask
+    ```
+    
+* And of course, check if JMeter is installed.
+
+* Start the server by running:
     ```bash
     python3 service.py
     ```
-    
-* Open a new terminal session and to run a JMeter script from the command line
+
+* Open a new terminal session and run a JMeter script from the command line by executing:
     ```bash
     jmeter -n -t thirsty.jmx
     ```
@@ -40,3 +48,8 @@
      There are 0 bottles of Whiskey in the cabinet. Date=1713344736881 Thread=7
     127.0.0.1 - - [17/Apr/2024 14:35:36] "POST /flask HTTP/1.1" 200 -
     </pre>
+
+### Known Caveats
+* The BSF PreProcessor is deprecated, and I could have used JS223. However, to avoid dependencies on specific engines, the first choice seemed better.
+* Once requests are exhausted, I am not able to get the "Cheers" message to print.
+
