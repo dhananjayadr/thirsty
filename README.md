@@ -1,5 +1,5 @@
 ### Hydration party 
-This is a simple POC to demonstrate the generation of complex requests in JMeter.
+This is a simple POC to demonstrate the generation of requests in JMeter.
 
 ### Prerequisites 
 * The server script is written in Python using the Flask micro web framework. You need to have Python installed and Flask installed by running:
@@ -49,7 +49,7 @@ This is a simple POC to demonstrate the generation of complex requests in JMeter
     127.0.0.1 - - [17/Apr/2024 14:35:36] "POST /flask HTTP/1.1" 200 -
     </pre>
 
-### Known Caveats
+### Known caveats
 * The BSF PreProcessor is deprecated, and I could have used JS223. However, to avoid dependencies on specific engines, the first choice seemed better.
 * Once requests are exhausted, I am not able to get the "Cheers" message to print.
 
